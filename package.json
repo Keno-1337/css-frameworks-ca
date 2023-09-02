@@ -2,9 +2,9 @@
   "name": "css-frameworks-ca",
   "version": "0.0.1",
   "description": "CSS Frameworks CA project",
-  "main": "index.js",
   "scripts": {
-    "build": "sass src/scss:dist/css"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css"
   },
   "repository": {
     "type": "git",
