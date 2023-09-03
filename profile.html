@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="dist/css/styles.css">
 </head>
-<body>
-    
+<body class="svgBackgroundVertLines">
+    <div class="container mt-4">
+        <!-- User Profile -->
+<div class="card mb-4">
+    <div class="card-body">
+        <img src="Screenshot 2023-04-02 135312.png" alt="User Profile" class="img-fluid rounded-circle mb-3" width="100">
+        <h5 class="card-title">John Doe</h5>
+        <p class="card-text">Bio: Web Developer | Travel enthusiast | Dog lover</p>
+        <p class="card-text"><strong>Followers:</strong> 1000</p>
+        <p class="card-text"><strong>Following:</strong> 500</p>
+        <a href="#" class="btn btn-primary">Follow</a>
+    </div>
+</div>
+
+
+        <!-- Posts -->
+        <div class="card">
+            <div class="card-header">
+                <h4>Posts</h4>
+            </div>
+            <div class="card-body">
+                <!-- Post 1 -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Post Title 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+
+                <!-- Post 2 -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Post Title 2</h5>
+                        <p class="card-text">Suspendisse potenti. Nulla facilisi. Phasellus aliquam risus in nunc.</p>
+                    </div>
+                </div>
+                <!-- Add more posts here -->
+            </div>
+        </div>
+    </div>
+    <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
 </body>
 </html>
