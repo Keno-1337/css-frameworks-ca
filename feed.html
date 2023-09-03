@@ -1,129 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="dist/css/styles.css">
-    <link rel="stylesheet" href="test.css">
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
-    <!-- Include necessary meta tags and CSS/JS files similar to the Authentication page -->
     <title>Feed</title>
 </head>
 <body class="svgBackgroundVertLines">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <!-- Brand/logo -->
-        <a class="navbar-brand" href="#">Your Logo</a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container justify-content-between">
+        <a class="navbar-brand" href="index.html">Sonnet</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="feed.html">Feed</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <!--Create post btn-->
-                <li class="nav-item">
-                  <button class="btn btn-secondary ml-auto" id="showFormButton">+</button>
+                    <a class="nav-link" href="profile.html">Profile</a>
                 </li>
             </ul>
         </div>
+        <li class="nav-item">
+            <button class="btn btn-secondary expandable-button">+</button>
+        </li>
     </div>
 </nav>
-
-<div class="overlay" id="overlay">
-  <div class="modal">
-      <button id="closeFormButton" class="close-button">×</button>
-      <form action="/create-post" method="POST">
-          <!-- Form content goes here -->
-          <form action="/create-post" method="POST" style="display: none;">
-            <div class="form-group">
-                <label class="row justify-content-center" for="post-content">Create New Post</label>
-                <textarea class="form-control" id="post-content" name="post-content" rows="3"></textarea>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </form>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <span class="close" id="closeFormButton">&times;</span>
+      <form action="#" method="POST">
+          <!-- Form cntent -->
+          <div class="form-group">
+              <label for="post-content">Create New Post</label>
+              <textarea class="form-control" id="post-content" name="post-content" rows="3"></textarea>
+              <button type="submit" class="btn btn-primary">Make Post</button>
+          </div>
       </form>
   </div>
 </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 col-md-10 col-sm-12">
+            <h1 class="text-center">Feed</h1>
 
-<!--Start toggle display create Post Form-->
-<script>
-    // JavaScript to toggle form visibility
-    const showFormButton = document.getElementById('showFormButton');
-    const form = document.querySelector('form');
-
-    showFormButton.addEventListener('click', () => {
-        if (form.style.display === 'none') {
-            form.style.display = 'block'; // Show the form
-        } else {
-            form.style.display = 'none';  // Hide the form
-        }
-    });
-</script>
-<!--End toggle display create Post Form-->
-
-    <div class="container">
-        <h1 class="row blueHeader justify-content-center">Feed</h1>
-        <!-- Search bar -->
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Search</button>
-            </div>
-        </div>
-        
-        <!-- Sort options (you can customize this) -->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sort By
-            </button>
-            <div class="dropdown-menu" aria-labelledby="sortDropdown">
-                <a class="dropdown-item" href="#">Newest</a>
-                <a class="dropdown-item" href="#">Oldest</a>
-                <a class="dropdown-item" href="#">Popular</a>
-            </div>
-        </div>
-
-        <!-- List of posts thumbnails -->
-        <!-- Add your post thumbnails here -->
-
-        <!-- Form to create a new post -->
-        <div id="create-post">
-        <form action="/create-post" method="POST" style="display: none;">
-            <div class="form-group">
-                <label for="post-content">Create New Post</label>
-                <textarea class="form-control" id="post-content" name="post-content" rows="3"></textarea>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-        <!--Posts-->
-        <div class="card">
-          <div class="card-header">
-              <h4>Posts</h4>
-          </div>
-          <div class="card-body">
-            <!-- Post 1 -->
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h5 class="card-title">Post Title 1</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <!--search-->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button">Search</button>
                 </div>
             </div>
-    </div>
-    <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
-    <script src="search.js"></script>
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sort By
+              </button>
+              <div class="dropdown-menu" aria-labelledby="sortDropdown">
+                  <a class="dropdown-item" href="#">Newest</a>
+                  <a class="dropdown-item" href="#">Oldest</a>
+                  <a class="dropdown-item" href="#">Popular</a>
+              </div>
+          </div>
+
+<div class="card mb-4">
+  <div class="row no-gutters">
+      <div class="col-md-3">
+          <img src="dist\assets\usericon.png" class="card-img" alt="Thumbnail Image">
+      </div>
+      <div class="col-md-9">
+          <div class="card-body">
+              <h5 class="card-title">@keno1337</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="card-footer">
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                  <div>
+                      <button class="btn btn-outline-primary">Like</button>
+                      <span class="badge badge-primary text-dark">62 Likes</span>
+                  </div>
+                  <button class="btn btn-outline-success ml-auto">Comment</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="card mb-4">
+  <div class="row no-gutters">
+      <div class="col-md-3">
+          <img src="dist\assets\usericon.png" class="card-img" alt="Thumbnail Image">
+      </div>
+      <div class="col-md-9">
+          <div class="card-body">
+              <h5 class="card-title">@NAPPA</h5>
+              <p class="card-text">What does the scouter say about his power level?</p>
+          </div>
+          <div class="card-footer">
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                  <div>
+                      <button class="btn btn-outline-primary">Like</button>
+                      <span class="badge badge-primary text-dark">9001 Likes</span>
+                  </div>
+                  <button class="btn btn-outline-success ml-auto">Comment</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="card mb-4">
+  <div class="row no-gutters">
+      <div class="col-md-3">
+          <img src="dist\assets\usericon.png" class="card-img" alt="Thumbnail Image">
+      </div>
+      <div class="col-md-9">
+          <div class="card-body">
+              <h5 class="card-title">@JohnDoe</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="card-footer">
+              <div class="card-footer d-flex justify-content-between align-items-center">
+                  <div>
+                      <button class="btn btn-outline-primary">Like</button>
+                      <span class="badge badge-primary text-dark">90 Likes</span>
+                  </div>
+                  <button class="btn btn-outline-success ml-auto">Comment</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="node_modules\bootstrap\dist\js\bootstrap.bundle.js"></script>
+<script src="search.js"></script>
+<script src="newPost.js"></script>
 </body>
 </html>

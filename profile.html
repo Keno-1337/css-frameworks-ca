@@ -2,51 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Profile</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="dist/css/styles.css">
 </head>
 <body class="svgBackgroundVertLines">
-    <div class="container mt-4">
-        <!-- User Profile -->
-<div class="card mb-4">
-    <div class="card-body">
-        <img src="Screenshot 2023-04-02 135312.png" alt="User Profile" class="img-fluid rounded-circle mb-3" width="100">
-        <h5 class="card-title">John Doe</h5>
-        <p class="card-text">Bio: Web Developer | Travel enthusiast | Dog lover</p>
-        <p class="card-text"><strong>Followers:</strong> 1000</p>
-        <p class="card-text"><strong>Following:</strong> 500</p>
-        <a href="#" class="btn btn-primary">Follow</a>
-    </div>
-</div>
-
-
-        <!-- Posts -->
-        <div class="card">
-            <div class="card-header">
-                <h4>Posts</h4>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container justify-content-between">
+            <a class="navbar-brand" href="index.html">Sonnet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feed.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                </ul>
             </div>
-            <div class="card-body">
-                <!-- Post 1 -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Post Title 1</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <li class="nav-item">
+                <button class="btn btn-secondary expandable-button">+</button>
+            </li>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center">
+            <div class="card" style="width: 75%;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-3">
+                            <img src="dist\assets\usericon.png" alt="User Profile" class="img-fluid rounded-circle" width="100">
+                        </div>
+                        <div class="col-md-8 col-lg-6">
+                            <h5 class="card-title">John Doe</h5>
+                            <h6 class="text-muted">@johndoe</h6>
+                            <p class="card-text">Web Developer | Photography enthusiast | Dog lover</p>
+                        </div>
+                        <div class="col-md-8 col-lg-3 text-md-end">
+                            <a href="#" class="btn btn-primary">Follow</a>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <p class="card-text"><strong>Followers:</strong> 1000</p>
+                            <p class="card-text"><strong>Following:</strong> 500</p>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Post 2 -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Post Title 2</h5>
-                        <p class="card-text">Suspendisse potenti. Nulla facilisi. Phasellus aliquam risus in nunc.</p>
-                    </div>
-                </div>
-                <!-- Add more posts here -->
             </div>
         </div>
     </div>
-    <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+        
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeFormButton">&times;</span>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="post-content">Create New Post</label>
+                    <textarea class="form-control" id="post-content" name="post-content" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary">Make Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <div class="d-flex justify-content-center mt-4">
+        <div class="card" style="width: 75%;">
+
+            <div class="card-body">
+                <div class="card-body">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Post Title</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                        <div class="card-footer">
+                          <div class="card-footer d-flex justify-content-between align-items-center">
+                            <div>
+                                <button class="btn btn-outline-primary">Like</button>
+                                <span class="badge badge-primary">10 Likes</span>
+                            </div>
+                            
+                            <button class="btn btn-outline-success ml-auto">Comment</button>
+                        </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
+<script src="newPost.js"></script>
 </body>
 </html>

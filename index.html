@@ -4,22 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Authentication</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="dist/css/styles.css"> <!-- Compiled SASS -->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="feed.html">Feed</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="profile.html">Profile</a>
-        </li>
-      </ul>
 </head>
 <body class="svgBackgroundVertLines">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container justify-content-between">
+            <a class="navbar-brand" href="index.html">Sonnet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feed.html">Feed</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+            <li class="nav-item">
+                <button class="btn btn-secondary expandable-button">+</button>
+            </li>
+        </div>
+    </nav>
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeFormButton">&times;</span>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="post-content">Create New Post</label>
+                    <textarea class="form-control" id="post-content" name="post-content" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary">Make Post</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -34,15 +60,18 @@
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password" minlength="8" required>
                         </div>
+                        <div class="text-center">
                         <button type="submit" class="btn btn-primary btn-block">Login / Register</button>
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="node_modules\@popperjs\core\dist\umd\popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script> <!-- Add JavaScript for form validation here -->
+    <script src="newPost.js"></script>
+    <script src="formValidation.js"></script> <!-- Add JavaScript for form validation here -->
 </body>
 </html>
