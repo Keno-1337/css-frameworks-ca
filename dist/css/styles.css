@@ -10726,6 +10726,10 @@ textarea.form-control-lg {
   background-size: cover;
 }
 
+.blueHeader {
+  color: #7F7EFF;
+}
+
 .auth-form {
   margin-top: 50px;
   padding: 20px;
