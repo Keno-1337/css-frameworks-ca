@@ -5,20 +5,20 @@ $spacers: (
   1: $spacer * .25,
   2: $spacer * .5,
   3: $spacer,
-  4: $spacer * 1.5,
+  4: $spacer * 1.4,
   5: $spacer * 3,
 );
 //colors
-$blue:    #0d6efd;
-$indigo:  #7F7EFF; //changed
-$purple:  #6f42c1;
-$pink:    #d63384;
-$red:     #E94F37; //changed
-$orange:  #fd7e14;
-$yellow:  #ffc107;
-$green:   #198754;
-$teal:    #DDFFF7; //changed
-$cyan:    #048A81; //changed 
+$blue:    #1772fb;
+$indigo:  #7F7EFF; 
+$purple:  #7141c9;
+$pink:    #d43283;
+$red:     #E94F37; 
+$orange:  #fc7c14;
+$yellow:  #fcc10f;
+$green:   #24925e;
+$teal:    #DDFFF7; 
+$cyan:    #048A81; 
 // scss-docs-start theme-color-variables
 // scss-docs-start gray-color-variables
 $white:    #fff;
